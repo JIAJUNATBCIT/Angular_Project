@@ -1,0 +1,18 @@
+.employeeTable {
+    width: 60%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.email_td {
+    width: 150px;
+}
+
+.salary_td {
+    width: 100px;
+}
+
+.errorMsg {
+    color: red;
+    width: 600px;
+}

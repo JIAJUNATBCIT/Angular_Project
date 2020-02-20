@@ -1,0 +1,77 @@
+<br/>
+<nav>ALL |
+    <a routerLink="/User/Login" routerLinkActive="active" *ngIf="token == ''">Login | </a>
+    <a routerLink="/User/Register" routerLinkActive="active" *ngIf="token == ''"> Register</a>
+</nav>
+
+<div>
+    <label for="username">
+        Username: 
+    </label>
+    <input id="username" type="text" [(ngModel)]="_username">
+</div>
+  
+<div>
+    <label for="first_name">
+        First name: 
+    </label>
+    <input id="first_name" type="text" [(ngModel)]="_first_name">
+</div>
+
+<div>
+    <label for="last_name">
+        Last name: 
+    </label>
+    <input id="last_name" type="text" [(ngModel)]="_last_name">
+</div>
+
+<div>
+    <label for="street_address">
+        Street Address: 
+    </label>
+    <input id="street_address" type="text" [(ngModel)]="_street_address">
+</div>
+
+<div>
+    <label for="email">
+        Email: 
+    </label>
+    <input id="email" type="text" [(ngModel)]="_email">
+</div>
+
+<div>
+    <label for="phone">
+        Phone: 
+    </label>
+    <input id="phone" type="text" [(ngModel)]="_phone">
+</div>
+
+<div>
+    <label for="password">
+        Password: 
+    </label>
+    <input id="password" type="password" [(ngModel)]="_password">
+</div>
+
+<div>
+    <label for="password_confirm">
+        Password Confirm: 
+    </label>
+    <input id="password_confirm" type="password" [(ngModel)]="_password_confirm">
+</div>
+
+<div>
+    <label for="roles">
+        Roles: &nbsp;&nbsp;&nbsp;
+    </label>
+    <label>Manager</label>
+    <input id="manager" type="checkbox" value="Manager" (click) = "selectCheckBox($event.target.checked,'Manager')">
+    <label>&nbsp;&nbsp;&nbsp;&nbsp;HR</label>
+    <input id="HR" type="checkbox" value="HR" (click) = "selectCheckBox($event.target.checked,'HR')">
+    <label>&nbsp;&nbsp;&nbsp;&nbsp;Staff</label>
+    <input id="Staff" type="checkbox" value="Staff" (click) = "selectCheckBox($event.target.checked,'Staff')" checked>
+</div>
+  
+<input type="button" value="Register" (click) = "register()"><br>
+
+<label class="errorMsg">{{_errorMessage}}</label>

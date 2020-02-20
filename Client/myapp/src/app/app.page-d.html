@@ -1,0 +1,41 @@
+<br/>
+<nav>{{display_role}} |
+    <a routerLink="/User/Login" routerLinkActive="active" *ngIf="token == ''">Login | </a>
+    <a routerLink="/User/Register" routerLinkActive="active" *ngIf="token == ''"> Register | </a>
+    <a routerLink="/User/Profile" routerLinkActive="active" *ngIf="token != ''">Profile</a>
+    <a routerLink="/User/Employees" routerLinkActive="active" *ngIf="isManager"> | Employees</a>
+    <a routerLink="/User/Payroll" routerLinkActive="active" *ngIf="isHR"> | Payroll</a>
+    <a routerLink="/User/Login" routerLinkActive="active" *ngIf="token != ''" (click)='logout()'> | Logout ({{_username}})</a> 
+</nav>
+<br/>
+<table class="employeeTable">
+    <tr>
+        <td><b>Username</b></td>
+        <td><b>Name</b></td>
+        <td><b>Last Name</b></td>
+        <td><b>Street Address</b></td>
+        <td class="email_td"><b>Email</b></td>
+        <td><b>Phone</b></td>
+        <td></td>
+    </tr>
+    <tr *ngFor="let user of _all_users">
+        <td>
+            {{user.username}}
+        </td>
+        <td>
+            {{user.firstname}}
+        </td>
+        <td>
+            {{user.lastname}}
+        </td>
+        <td>
+            {{user.streetaddress}}
+        </td>
+        <td>
+            <a href="mailto:{{user.email}}">{{user.email}}</a>
+        </td>
+        <td>
+            {{user.phonenumber}}
+        </td>
+    </tr>
+</table>

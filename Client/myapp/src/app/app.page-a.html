@@ -1,0 +1,10 @@
+<br/>
+<nav>ALL |
+  <a routerLink="/User/Login" routerLinkActive="active" *ngIf="token == ''">Login | </a>
+  <a routerLink="/User/Register" routerLinkActive="active" *ngIf="token == ''"> Register </a>
+</nav>
+Login name: <input type='text' [(ngModel)]='username'/><br/>
+Password:   <input type='text' [(ngModel)]='password'/><br/>
+<input type='button' value='login' (click)='login()'/>&nbsp;
+<input type='button' value='logout' (click)='logout()'/>
+<br/><br/>

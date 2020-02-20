@@ -1,0 +1,54 @@
+<br/>
+<nav>{{display_role}} |
+    <a routerLink="/User/Login" routerLinkActive="active" *ngIf="token == ''">Login | </a>
+    <a routerLink="/User/Register" routerLinkActive="active" *ngIf="token == ''"> Register | </a>
+    <a routerLink="/User/Profile" routerLinkActive="active" *ngIf="token != ''">Profile</a>
+    <a routerLink="/User/Employees" routerLinkActive="active" *ngIf="isManager"> | Employees</a>
+    <a routerLink="/User/Payroll" routerLinkActive="active" *ngIf="isHR"> | Payroll</a>
+    <a routerLink="/User/Login" routerLinkActive="active" *ngIf="token != ''" (click)='logout()'> | Logout ({{_username}})</a> 
+</nav>
+
+<div>
+    <label for="username">
+        Username: 
+    </label>
+    <label for="username">{{_username}}(Not editable in profile view)</label>
+</div>
+  
+<div>
+    <label for="first_name">
+        First name: 
+    </label>
+    <input id="first_name" type="text" [(ngModel)]="_first_name">
+</div>
+
+<div>
+    <label for="last_name">
+        Last name: 
+    </label>
+    <input id="last_name" type="text" [(ngModel)]="_last_name">
+</div>
+
+<div>
+    <label for="street_address">
+        Street Address: 
+    </label>
+    <input id="street_address" type="text" [(ngModel)]="_street_address">
+</div>
+
+<div>
+    <label for="email">
+        Email: 
+    </label>
+    <input id="email" type="text" [(ngModel)]="_email">
+</div>
+
+<div>
+    <label for="phone">
+        Phone: 
+    </label>
+    <input id="phone" type="text" [(ngModel)]="_phone">
+</div>
+  
+<input type="button" value="Update" (click) = "update()"><br>
+<label class="errorMsg">{{_errorMessage}}</label>
